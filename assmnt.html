@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="tablemk()" id ="test">  Show the table   </button>
+
+    <script type="text/javascript">
+        tr=prompt("Enter number of rows");
+        var sk =parseInt(tr);
+        pr=prompt("Enter number of columns");
+        var rk =parseInt(pr);
+        
+        function tablemk(){
+         
+     bd = document.body;
+     tble  = document.createElement('Table');
+  
+    tble.style.border = '2px solid black';
+    tble.style.width  = '200px';
+
+    for( i = 1; i <= sk; i++){
+         tr = tble.insertRow();
+        for(j = 1; j <= rk; j++){
+                 td = tr.insertCell();
+             
+                td.appendChild(document.createTextNode(i*j));
+                td.style.border = '1px solid blue';
+            }     
+    
+    bd.appendChild(tble);
+     
+        }
+        document.getElementById("test").remove();
+    }
+    tablecreate(sk,rk);
+   
+    </script>
+</body>
+</html>
